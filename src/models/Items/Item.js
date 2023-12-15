@@ -1,30 +1,55 @@
-class Item {
-    constructor(brand, model, date, typeId, obvs) {
-        this.brand = brand;
-        this.model = model;
-        this.type = date;
-        this.acquicitionDate = new Date();
-        this.obvs = obvs;
+require('dotenv').config({path: './../../../.env'});
+const {Model, DataTypes} = require('sequelize');
+const {sequelize} = require('../../configs/DBO');
+
+
+class Item extends Model {
+    static associate(models) {
+        Item.hasMany(models.TrackedItem, {foreignKey: 'ite_id'});
+        Item.hasMany(models.UntrackedItem, {foreignKey: 'ite_id'});
     }
-
-    getBrand() { return this.brand; }
-
-    getModel() { return this.model; }
-
-    getType() { return this.type; }
-
-    getAcquicitionDate() { return this.acquicitionDate;}
-
-    getObvs() { return this.obvs; }
-
-    setBrand(brand) { this.brand = brand; }
-
-    setModel(model) { this.model = model; }
-
-    setType(type) { this.type = type; }
-
-    setAcquicitionDate(date) { this.acquicitionDate = date;}
-
-    setObvs(obvs) { this.obvs = obvs; }
 }
 
+
+Item.init({
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true
+    },
+    brand: {
+        type: DataTypes.STRING,
+        allowNull: false
+
+    },
+    model: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    type: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    acquicitionDate: {
+        type: DataTypes.DATE,
+        allowNull: false
+    },
+    obvs: {
+        type: DataTypes.STRING,
+        allowNull: true
+    }
+}, {
+    sequelize,
+    tableName: 'item'
+});
+
+Item.sync({ force: false, match: process.env.DBO_DATABASE})
+    .then(() => {
+        console.log('Table created');
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+module.exports = Object.freeze(Item);

@@ -1,12 +1,12 @@
+const Item = require('./Item.js');
 class TrackedItem extends Item {
-  constructor(serialN, tag, state, value) {
-    super();
+  constructor(brand, model, date, typeId, obvs, serialN, tag, state, value) {
+    super(brand, model, date, typeId, obvs);
     this._serialN = serialN;
     this._tag = tag;
     this._state = state;
     this._value = value;
   }
-
 
   get value() { return this._value; };
   set value(value) { this._value = value; };
@@ -20,3 +20,5 @@ class TrackedItem extends Item {
 
   set tag(value) { this._tag = value; };
 }
+
+module.exports = Object.freeze(TrackedItem);
