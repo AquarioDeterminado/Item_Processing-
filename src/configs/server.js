@@ -2,32 +2,37 @@ const express = require('express');
 
 class Server {
     constructor() {
-        this.app = express();
+        this._app = express();
         this.port = 3000;
 
         this.middlewares();
         this.routes();
     }
 
+    get app() { return this._app; }
+
     middlewares() {
-        this.app.use(express.static('public'));
+        this._app.use(express.static('public'));
     }
 
     routes() {
-        this.app.get('/', (req, res) => {
+        this._app.get('/', (req, res) => {
             res.send('Hello World!');
         });
 
-        this.app.get('/items', (req, res) => {
+        this._app.get('/items', (req, res) => {
             res.send(JSON.stringify(Item.getAll()));
         });
     }
 
     listen() {
-        this.app.listen(this.port, () => {
+        this._app.listen(this.port, () => {
             console.log(`Example app listening at http://localhost:${this.port}`);
         });
     }
 }
 
-module.exports = Server;
+const server = new Server();
+server.listen();
+
+module.exports = Object.freeze({Server, server: server});

@@ -10,7 +10,6 @@ class Item extends Model {
     }
 }
 
-
 Item.init({
     id: {
         type: DataTypes.INTEGER,
@@ -28,8 +27,9 @@ Item.init({
         allowNull: false
     },
     type: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        foreignKey: true
     },
     acquicitionDate: {
         type: DataTypes.DATE,
@@ -44,7 +44,7 @@ Item.init({
     tableName: 'item'
 });
 
-Item.sync({ force: false, match: process.env.DBO_DATABASE})
+Item.sync({ force: false, match: process.env.DBO_DATABASE, alter: true})
     .then(() => {
         console.log('Table created');
     })

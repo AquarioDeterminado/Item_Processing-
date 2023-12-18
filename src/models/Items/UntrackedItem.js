@@ -34,4 +34,4 @@ UntrackedItem.init({
 UntrackedItem.sync({ force: false, match: process.env.DBO_DATABASE})
 
 
-module.exports = Object.freeze(UntrackedItem);
+module.exports = Object.freeze({UntrackedItem: UntrackedItem});
