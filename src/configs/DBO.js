@@ -1,32 +1,18 @@
-require('dotenv').config({path: './../../.env'});
-const mysql2= require('mysql2');
 const {Sequelize} = require("sequelize");
-
-class DBO {
-    static makePool() {
-        this.pool = mysql2.createPool({
-        host: process.env.DBO_HOST,
-        user: process.env.DBO_USER,
-        password: process.env.DBO_PASSWORD,
-        database: process.env.DBO_DATABASE,
-        });
-    }
-}
-DBO.makePool();
-
-if (DBO.pool != null) {
-    console.log("Connected to database");
-} else {
-    console.log("Error connecting to database");
-}
 
 const sequelize = new Sequelize({
     dialect: 'mysql',
     host: process.env.DBO_HOST,
-    port: process.env.DBO_PORT,
     username: process.env.DBO_USER,
-    password: process.env.DBO_PASSWORD,
-    database: process.env.DBO_DATABASE
+    password: process.env.DBO_PASS,
+    database: process.env.DBO_DATABASE,
+    port: process.env.DBO_PORT
 });
 
-module.exports = Object.freeze({pool: DBO.pool, sequelize: sequelize});
+sequelize.authenticate().then(() => {
+    console.log('Connection has been established successfully.');
+}).catch((error) => {
+    console.error('Unable to connect to the database:', error);
+});
+
+module.exports = Object.freeze({sequelize: sequelize});

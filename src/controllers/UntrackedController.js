@@ -1,4 +1,6 @@
 const {UntrackedItem} = require('../models/Items/UntrackedItem');
+require('dotenv').config({path: './../../.env'});
+
 class UntrackedController {
     static async createUntrackedItem(req, res) {
         try {

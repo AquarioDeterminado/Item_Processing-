@@ -1,6 +1,6 @@
-require('dotenv').config({path: './../../../.env'});
 const {Model, DataTypes} = require('sequelize');
 const {sequelize} = require('../../configs/DBO');
+const {server} = require("../../configs/server");
 
 
 class Item extends Model {
