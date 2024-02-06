@@ -1,8 +1,5 @@
 const {DataTypes, Model} = require("sequelize");
 const {sequelize} = require("../configs/DBO");
-const {UntrackedItem} = require("./UntrackedItem");
-const {TrackedItem} = require("./TrackedItem");
-const {ItemType} = require("./ItemType");
 
 class Item extends Model {
 }

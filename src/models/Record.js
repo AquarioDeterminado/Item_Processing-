@@ -1,7 +1,4 @@
 const {Model, DataTypes} = require("sequelize");
-const {RecordType} = require("./RecordType");
-const {Item} = require("./Item");
-const {User} = require("./User");
 const {sequelize} = require("../configs/DBO");
 
 class Record extends Model{

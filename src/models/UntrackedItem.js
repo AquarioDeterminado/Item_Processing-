@@ -1,12 +1,11 @@
 const {sequelize} = require('../configs/DBO');
-const {DataTypes, Model, INTEGER, HasOne} = require("sequelize");
-const {Item} = require("./Item");
+const {DataTypes, Model} = require("sequelize");
 
 class UntrackedItem extends Model{
 }
 
 UntrackedItem.init({
-    id: {
+    unt_id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         allowNull: false,

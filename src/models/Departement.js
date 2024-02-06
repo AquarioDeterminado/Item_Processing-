@@ -1,4 +1,3 @@
-const {User} = require("./User");
 const {DataTypes, Model} = require("sequelize");
 const {sequelize} = require("../configs/DBO");
 

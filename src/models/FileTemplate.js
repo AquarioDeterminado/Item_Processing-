@@ -1,5 +1,4 @@
 const {Model, DataTypes} = require("sequelize");
-const {RecordType} = require("./RecordType");
 const {sequelize} = require("../configs/DBO");
 
 class  FileTemplate extends Model {

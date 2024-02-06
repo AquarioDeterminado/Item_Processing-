@@ -1,6 +1,5 @@
 const {Model, DataTypes} = require("sequelize");
 const {sequelize} = require("../configs/DBO");
-const {Item} = require("./Item");
 
 class Facture extends Model {
     static associate(models) {

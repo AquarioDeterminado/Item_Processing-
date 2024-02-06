@@ -22,7 +22,7 @@ function initModels(sequelize) {
     var facture = Facture;
     var department = Department;
 
-    item.hasOne(itemType);
+    item.belongsTo(itemType);
     item.belongsToMany(facture, {through: 'facture_item'});
 
     trackedItem.belongsTo(item);

@@ -1,9 +1,7 @@
 const {Model, DataTypes} = require("sequelize");
 const {sequelize} = require("../configs/DBO");
-const {Item} = require("./Item");
 
 class ItemType extends Model{
-
 }
 
 ItemType.init({
