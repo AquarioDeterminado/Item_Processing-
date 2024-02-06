@@ -1,12 +1,10 @@
-import {DataTypes, Model} from "sequelize";
-import {sequelize} from "../configs/DBO";
+const {DataTypes, Model} = require("sequelize");
+const {sequelize} = require("../configs/DBO");
+const {UntrackedItem} = require("./UntrackedItem");
+const {TrackedItem} = require("./TrackedItem");
+const {ItemType} = require("./ItemType");
 
 class Item extends Model {
-    static associate(models) {
-        this.belongsTo(models.FactureItems, {
-            foreignKey: 'itemId'
-        });
-    }
 }
 
 Item.init({
@@ -15,14 +13,6 @@ Item.init({
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
-    },
-    itemTypeId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'ItemType',
-            key: 'id'
-        }
     }
 }, {
     sequelize,
@@ -31,4 +21,4 @@ Item.init({
 
 Item.sync({force: false})
 
-module.exports = Object.freeze(Item);
+module.exports = Object.freeze({Item: Item});

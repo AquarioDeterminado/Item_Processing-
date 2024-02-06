@@ -1,4 +1,7 @@
-import {Model, DataTypes} from "sequelize";
+const {Model, DataTypes} = require("sequelize");
+const {sequelize} = require("../configs/DBO");
+const {Department} = require("./Departement");
+const {Record} = require("./Record");
 
 class User  extends Model {
 
@@ -28,14 +31,6 @@ User.init({
         type: DataTypes.DATE,
         allowNull: true
     },
-    departement: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        refererences: {
-            model: 'departement',
-            key: 'id'
-        }
-    },
     n_meca: {
         type: DataTypes.INTEGER,
         allowNull: true
@@ -46,6 +41,9 @@ User.init({
     tableName: 'user'
 });
 
+User.hasOne(Department);
+User.hasMany(Record)
+
 User.sync({force: false, match: process.env.DBO_DATABASE})
 
-module.exports = Object.freeze(User);
+module.exports = Object.freeze({User: User});

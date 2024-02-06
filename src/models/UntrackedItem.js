@@ -1,8 +1,8 @@
 const {sequelize} = require('../configs/DBO');
-const {DataTypes, Model, INTEGER} = require("sequelize");
+const {DataTypes, Model, INTEGER, HasOne} = require("sequelize");
+const {Item} = require("./Item");
 
-class UntrackedItem extends Model {
-
+class UntrackedItem extends Model{
 }
 
 UntrackedItem.init({
@@ -11,14 +11,6 @@ UntrackedItem.init({
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
-    },
-    item_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'Item',
-            key: 'id'
-        }
     },
     quantity: {
         type: DataTypes.INTEGER,
@@ -30,6 +22,5 @@ UntrackedItem.init({
 });
 
 UntrackedItem.sync({ force: false, match: process.env.DBO_DATABASE})
-
 
 module.exports = Object.freeze({UntrackedItem: UntrackedItem});

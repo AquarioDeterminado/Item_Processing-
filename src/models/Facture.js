@@ -1,3 +1,7 @@
+const {Model, DataTypes} = require("sequelize");
+const {sequelize} = require("../configs/DBO");
+const {Item} = require("./Item");
+
 class Facture extends Model {
     static associate(models) {
         this.belongsToMany(models.Item, {
@@ -14,10 +18,6 @@ Facture.init({
         allowNull: false,
         primaryKey: true
     },
-    Items: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
     creation_date: {
         type: DataTypes.DATE,
         allowNull: false,
@@ -32,6 +32,6 @@ Facture.init({
     tableName: 'facture'
 });
 
-Facture.sync({force: false})
+Facture.sync({force: false});
 
-module.exports = Object.freeze(Facture);
+module.exports = Object.freeze({Facture: Facture});

@@ -1,5 +1,6 @@
-const Item = require('./Item.js');
+const {sequelize} = require("../configs/DBO");
 const {Model, DataTypes} = require("sequelize");
+
 class TrackedItem extends Model {
 }
 
@@ -9,14 +10,6 @@ TrackedItem.init({
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
-    },
-    item_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: Item,
-            key: 'id'
-        }
     },
     brand: {
         type: DataTypes.STRING,
@@ -51,6 +44,8 @@ TrackedItem.init({
     tableName: 'tracked_Item'
 });
 
+
+
 TrackedItem.sync({ force: false, match: process.env.DBO_DATABASE})
 
-module.exports = Object.freeze(TrackedItem);
+module.exports = Object.freeze({TrackedItem: TrackedItem});

@@ -1,7 +1,10 @@
 const {Model, DataTypes} = require("sequelize");
+const {RecordType} = require("./RecordType");
+const {Item} = require("./Item");
+const {User} = require("./User");
+const {sequelize} = require("../configs/DBO");
 
 class Record extends Model{
-
 }
 
 Record.init({
@@ -10,30 +13,6 @@ Record.init({
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
-    },
-    user: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'User',
-            key: 'id'
-        }
-    },
-    item: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'Item',
-            key: 'id'
-        }
-    },
-    type: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'RecordType',
-            key: 'id'
-        }
     },
     description: {
         type: DataTypes.STRING,
@@ -50,4 +29,4 @@ Record.init({
 
 Record.sync({ force: false, match: process.env.DBO_DATABASE});
 
-module.exports = Record;
+module.exports = Object.freeze({Record: Record});

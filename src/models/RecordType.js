@@ -1,4 +1,7 @@
 const {Model, DataTypes} = require("sequelize");
+const {sequelize} = require("../configs/DBO");
+const {Record} = require("./Record");
+const {FileTemplate} = require("./FileTemplate");
 
 class RecordType extends Model {
 
@@ -14,14 +17,6 @@ RecordType.init({
     name: {
         type: DataTypes.STRING,
         allowNull: false
-    },
-    fileTemplate: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        references: {
-            model: 'FileTemplate',
-            key: 'id'
-        }
     }
 }, {
     sequelize,
@@ -30,4 +25,4 @@ RecordType.init({
 
 RecordType.sync({ force: false, match: process.env.DBO_DATABASE})
 
-module.exports = RecordType;
+module.exports = Object.freeze({RecordType: RecordType});

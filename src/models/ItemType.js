@@ -1,5 +1,6 @@
 const {Model, DataTypes} = require("sequelize");
 const {sequelize} = require("../configs/DBO");
+const {Item} = require("./Item");
 
 class ItemType extends Model{
 
@@ -21,6 +22,8 @@ ItemType.init({
     tableName: 'item_type'
 });
 
+//ItemType.hasMany(Item);
+
 ItemType.sync({force: false, match: process.env.DBO_DATABASE})
 
-module.exports = ItemType;
+module.exports = Object.freeze({ItemType: ItemType});

@@ -1,4 +1,6 @@
-import {Model, DataTypes} from "sequelize";
+const {Model, DataTypes} = require("sequelize");
+const {RecordType} = require("./RecordType");
+const {sequelize} = require("../configs/DBO");
 
 class  FileTemplate extends Model {
 
@@ -24,6 +26,7 @@ FileTemplate.init({
     tableName: 'file_template'
 });
 
+
 FileTemplate.sync({ force: false, match: process.env.DBO_DATABASE})
 
-module.exports = FileTemplate;
+module.exports = Object.freeze({FileTemplate: FileTemplate});
