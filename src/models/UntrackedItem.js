@@ -1,10 +1,8 @@
-const {sequelize} = require('./../../configs/DBO');
-const {DataTypes, Model} = require("sequelize");
+const {sequelize} = require('../configs/DBO');
+const {DataTypes, Model, INTEGER} = require("sequelize");
 
 class UntrackedItem extends Model {
-    static associate(models) {
-        UntrackedItem.belongsTo(models.Item, {foreignKey: 'item_id'});
-    }
+
 }
 
 UntrackedItem.init({
@@ -14,10 +12,6 @@ UntrackedItem.init({
         allowNull: false,
         primaryKey: true
     },
-    quantity: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
     item_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -25,7 +19,11 @@ UntrackedItem.init({
             model: 'Item',
             key: 'id'
         }
-    }
+    },
+    quantity: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
 }, {
     sequelize,
     tableName: 'untracked_Item'

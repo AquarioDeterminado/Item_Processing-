@@ -4,16 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="645d3b73-5fb7-4afd-9ff2-5620e8bf4ff3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/item_processing.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="645d3b73-5fb7-4afd-9ff2-5620e8bf4ff3" name="Changes" comment="npm working;">
+      <change afterPath="$PROJECT_DIR$/src/models/Facture.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/FileTemplate.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/models/Item.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Record.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/RecordType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/TrackedItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/UntrackedController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/UntrackedController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ItemType.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ItemType.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Items/Item.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Items/TrackedItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Items/UntrackedItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/UntrackedItem.js" afterDir="false" />
+    </list>
+    <list id="eeebbb00-811e-4e58-a68e-8031ebcb9239" name="Idea" comment="not tacked">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,12 +32,56 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
+        <option value="tsconfig.json" />
         <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="item_stock" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="dev" />
+                    <option name="lastUsedInstant" value="1702895090" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="item_stock" />
+                    <option name="lastUsedInstant" value="1702576330" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="dropping" />
+                    <option name="lastUsedInstant" value="1702576320" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="devolution" />
+                    <option name="lastUsedInstant" value="1702576309" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="atribution" />
+                    <option name="lastUsedInstant" value="1702576296" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -53,25 +105,110 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/joaocoelho/Applications/IntelliJ IDEA Ultimate.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
-      &quot;mariadb&quot;
+      &quot;mariadb&quot;,
+      &quot;mysql&quot;
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/models" />
+      <recent name="$PROJECT_DIR$/src/models/Items" />
+      <recent name="$PROJECT_DIR$/src/configs" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="StockView.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="src/views/StockView.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Node.js.StockView.js" />
+      <item itemvalue="npm.start" />
+    </list>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="645d3b73-5fb7-4afd-9ff2-5620e8bf4ff3" name="Changes" comment="" />
+      <changelist id="eeebbb00-811e-4e58-a68e-8031ebcb9239" name="Idia" comment="not tacked" />
       <created>1702310202620</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1702310202620</updated>
       <workItem from="1702310203919" duration="4064000" />
       <workItem from="1702461969960" duration="8000" />
+      <workItem from="1702462197112" duration="7584000" />
+      <workItem from="1702575102024" duration="14839000" />
+      <workItem from="1702891149306" duration="18339000" />
+      <workItem from="1703238738063" duration="3006000" />
+      <workItem from="1703608714872" duration="13000" />
+      <workItem from="1703676375735" duration="2513000" />
+      <workItem from="1704387584918" duration="651000" />
+      <workItem from="1704883571560" duration="1250000" />
+      <workItem from="1704970045774" duration="4767000" />
+      <workItem from="1705306884442" duration="1200000" />
+      <workItem from="1705414103235" duration="3417000" />
+      <workItem from="1705503160760" duration="3349000" />
+      <workItem from="1705584815425" duration="2006000" />
+      <workItem from="1705911374264" duration="2825000" />
+      <workItem from="1706099463537" duration="1959000" />
+      <workItem from="1707121307966" duration="641000" />
+      <workItem from="1707124119139" duration="11664000" />
     </task>
+    <task id="LOCAL-00001" summary="Messing Around with node;">
+      <option name="closed" value="true" />
+      <created>1702468064613</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702468064613</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Connection to DB;">
+      <option name="closed" value="true" />
+      <created>1702576241933</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702576241933</updated>
+    </task>
+    <task id="LOCAL-00003" summary="C.U.R.L changed to sequelize;&#10;Finished models for item and untracked item;">
+      <option name="closed" value="true" />
+      <created>1702649025730</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702649025730</updated>
+    </task>
+    <task id="LOCAL-00004" summary="default stuff working (list, byId, etc...);&#10;0 security and data verification;">
+      <option name="closed" value="true" />
+      <created>1702895083281</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702895083281</updated>
+    </task>
+    <task id="LOCAL-00005" summary="npm working;">
+      <option name="closed" value="true" />
+      <created>1705914597735</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705914597735</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,5 +227,29 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Messing Around with node;" />
+    <MESSAGE value="Connection to DB;" />
+    <MESSAGE value="C.U.R.L changed to sequelize;&#10;Finished models for item and untracked item;" />
+    <MESSAGE value="default stuff working (list, byId, etc...);&#10;0 security and data verification;" />
+    <MESSAGE value="npm working;" />
+    <option name="LAST_COMMIT_MESSAGE" value="npm working;" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/controllers/UntrackedController.js</url>
+          <line>48</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,4 +1,4 @@
-const {UntrackedItem} = require('../models/Items/UntrackedItem');
+const {UntrackedItem} = require('../models/UntrackedItem');
 require('dotenv').config({path: './../../.env'});
 
 class UntrackedController {
