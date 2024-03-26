@@ -11,7 +11,7 @@ ItemType.init({
         allowNull: false,
         primaryKey: true
     },
-    name: {
+    type: {
         type: DataTypes.STRING,
         allowNull: false
     }

@@ -4,7 +4,7 @@
   "description": "Item Processing API",
   "main": "./src/App.js",
   "scripts": {
-        "start": "node ./src/App.js"
+    "start": "node ./src/App.js"
   },
   "dependencies": {
     "body-parser": "^1.20.2",

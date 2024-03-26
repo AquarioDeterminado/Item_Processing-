@@ -11,6 +11,10 @@ UntrackedItem.init({
         allowNull: false,
         primaryKey: true
     },
+    model: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
     quantity: {
         type: DataTypes.INTEGER,
         allowNull: false

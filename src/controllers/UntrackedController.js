@@ -12,15 +12,21 @@ class UntrackedController {
         }
     }
 
+
+
     static async updateUntrackedItem(req, res) {
-        try {
-            const {quantity, item_id} = req.body;
-            const {id} = req.params;
-            const untrackedItem = await models.UntrackedItem.update({quantity, item_id}, {where: {id: id}});
-            res.status(200).json({message: "Untracked item updated", untrackedItem: untrackedItem});
-        } catch (error) {
-            res.status(500).json({message: "Error updating untracked item", error: error});
-        }
+        const {untrackedItem} = req.body;
+        const {id} = req.params;
+
+        if (untrackedItem.unt_id)
+            res.status(400).json({message: "ID not matching"});
+        else
+            try {
+                const response = await models.UntrackedItem.update({quantity: untrackedItem.quantity, model: untrackedItem.model}, {where: {unt_id: id}});
+                res.status(200).json({message: "Untracked item updated", untrackedItem: response});
+            } catch (error) {
+                res.status(500).json({message: "Error updating untracked item", error: error});
+            }
     }
 
     static async deleteUntrackedItem(req, res) {
@@ -35,8 +41,8 @@ class UntrackedController {
 
     static async getUntrackedItem(req, res) {
         try {
-            const {id} = req.params;
-            const untrackedItem = await models.UntrackedItem.findOne({where: {id: id}});
+            const id = req.params.id;
+            const untrackedItem = await models.UntrackedItem.findOne({where: {unt_id: id}, include: {model: models.Item, include: models.ItemType}});
             res.status(200).json({message: "Untracked item found", untrackedItem: untrackedItem});
         } catch (error) {
             res.status(500).json({message: "Error finding untracked item", error: error});
@@ -45,7 +51,7 @@ class UntrackedController {
 
     static async getAllUntrackedItems(req, res) {
         try {
-            const untrackedItems = await models.UntrackedItem.findAll();
+            const untrackedItems = await models.UntrackedItem.findAll({include: {model: models.Item, include: models.ItemType}});
             res.status(200).json({message: "Untracked items found", untrackedItems: untrackedItems});
         } catch (error) {
             res.status(500).json({message: "Error finding untracked items", error: error});

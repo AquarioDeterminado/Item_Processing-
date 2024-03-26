@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="645d3b73-5fb7-4afd-9ff2-5620e8bf4ff3" name="Changes" comment="Models Connected;">
+    <list default="true" id="645d3b73-5fb7-4afd-9ff2-5620e8bf4ff3" name="Changes" comment="Working on UntrackedItem mangement first;">
+      <change afterPath="$PROJECT_DIR$/src/controllers/ItemTypeController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/UserController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Feature.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Permission.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/User.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Departement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Departement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Facture.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Facture.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/FileTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/FileTemplate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configs/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/UntrackedController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/UntrackedController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/InitModels.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/InitModels.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Item.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/ItemType.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ItemType.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Record.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Record.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/RecordType.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/RecordType.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/UntrackedItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/UntrackedItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/StockView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/StockView.js" afterDir="false" />
     </list>
     <list id="eeebbb00-811e-4e58-a68e-8031ebcb9239" name="Idea" comment="not tacked">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -162,7 +165,17 @@
       <workItem from="1705911374264" duration="2825000" />
       <workItem from="1706099463537" duration="1959000" />
       <workItem from="1707121307966" duration="641000" />
-      <workItem from="1707124119139" duration="25463000" />
+      <workItem from="1707124119139" duration="26094000" />
+      <workItem from="1707300261887" duration="1359000" />
+      <workItem from="1707404129554" duration="4980000" />
+      <workItem from="1708422952869" duration="1487000" />
+      <workItem from="1708689214918" duration="184000" />
+      <workItem from="1710262297648" duration="1880000" />
+      <workItem from="1710427280899" duration="449000" />
+      <workItem from="1710506854434" duration="4710000" />
+      <workItem from="1710701541096" duration="8274000" />
+      <workItem from="1710841917907" duration="15079000" />
+      <workItem from="1711360077879" duration="9119000" />
     </task>
     <task id="LOCAL-00001" summary="Messing Around with node;">
       <option name="closed" value="true" />
@@ -220,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707234882128</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Code Clean;">
+      <option name="closed" value="true" />
+      <created>1707241011665</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1707241011665</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,28 +269,63 @@
     <MESSAGE value="npm working;" />
     <MESSAGE value="All Models Done;" />
     <MESSAGE value="Models Connected;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Models Connected;" />
+    <MESSAGE value="Code Clean;" />
+    <MESSAGE value="Working on UntrackedItem mangement first;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on UntrackedItem mangement first;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
+        <line-breakpoint type="javascript">
+          <url>file://$PROJECT_DIR$/src/controllers/UserController.js</url>
+          <line>19</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint type="javascript">
           <url>file://$PROJECT_DIR$/src/controllers/UntrackedController.js</url>
-          <line>48</line>
+          <line>56</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint type="javascript">
+          <url>file://$PROJECT_DIR$/src/controllers/UntrackedController.js</url>
+          <line>54</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint type="javascript">
+          <url>file://$PROJECT_DIR$/src/controllers/UntrackedController.js</url>
+          <line>43</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="27" />
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint type="javascript">
+          <url>file://$PROJECT_DIR$/src/controllers/UntrackedController.js</url>
+          <line>44</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/controllers/UntrackedController.js</url>
-          <line>47</line>
+          <line>25</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="31" />
+          <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/controllers/UntrackedController.js</url>
-          <line>50</line>
+          <line>27</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="32" />
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/views/StockView.js</url>
+          <line>32</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/views/StockView.js</url>
+          <line>33</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

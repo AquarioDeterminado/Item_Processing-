@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const {StockView} = require("../views/StockView");
+const {User} = require("../views/User");
 
 class Server {
     constructor() {
@@ -22,6 +23,7 @@ class Server {
         });
 
         StockView.activeRoutes(this);
+        User.activeRoutes(this);
     }
 
     cors() {
